@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/talk_bg">
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/loading_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/loading_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/loading" />
+
+        <com.fingertec.widget.FontTextView
+            android:id="@+id/loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/loading"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/loading_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/reload_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/load_fail_icon" />
+
+        <com.fingertec.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/load_fail"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/net"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/net_icon"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@mipmap/network_error"
+            android:scaleType="centerInside" />
+
+        <com.fingertec.widget.FontTextView
+            android:id="@+id/net_icon_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/net_no_tv"
+            android:textColor="@color/black_102"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/stroke_corner_bg"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <com.fingertec.widget.FontTextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/pay_done_bg"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/list_empty"
+            android:textColor="@color/submit_text_color"
+            android:textSize="18sp" />
+
+        <com.fingertec.widget.FontTextView
+            android:id="@+id/problem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/pay_tips"
+            android:textColor="@color/pay_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.fingertec.widget.FontTextView
+        android:id="@+id/comment_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:includeFontPadding="false"
+        android:text="@string/comment_list_empty"
+        android:textColor="@color/submit_text_color"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/list_empty_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/list_empty"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/topic_empty_bg" />
+
+        <com.fingertec.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="暂时没有您所查的内容"
+            android:textColor="@color/black_102"
+            android:textSize="18sp" />
+
+        <com.fingertec.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="您所查的内容已记录到系统,我们会对此进行补充."
+            android:textColor="@color/black_102"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

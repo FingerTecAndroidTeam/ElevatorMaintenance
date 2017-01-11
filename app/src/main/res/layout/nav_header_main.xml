@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <!--头部-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_nav"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/nav_padding_top"
+        android:paddingLeft="@dimen/nav_padding_left"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/nav_padding_top">
+
+        <com.fingertec.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:text="欢迎您:"
+            android:textColor="@color/grey_nav_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.fingertec.widget.FontTextView
+                android:id="@+id/nav_tv_name"
+                style="@style/nav_header_text"
+                android:text="张晓" />
+
+            <com.fingertec.widget.FontTextView
+                android:id="@+id/nav_tv_num"
+                style="@style/nav_header_text"
+                android:layout_marginLeft="10dp"
+                android:text="20161220A3" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--下面-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_nav_bottom"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/nav_padding_top">
+
+        <LinearLayout
+            android:id="@+id/nav_linear_finished_task"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/nav_padding_left">
+
+            <com.fingertec.widget.FontTextView
+                style="@style/nav_header_text"
+                android:text="已完成任务" />
+
+            <com.fingertec.widget.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/toolbar_right_count"
+                android:gravity="center"
+                android:lines="1"
+                android:maxWidth="60dp"
+                android:text="15"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_linear_setting"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/nav_body_one"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/nav_padding_left">
+
+            <com.fingertec.widget.FontTextView
+                style="@style/nav_header_text"
+                android:text="个人设置" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

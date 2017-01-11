@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/dialog_corner_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.0"
+                android:scaleType="centerInside"
+                android:src="@mipmap/star" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.0"
+                android:scaleType="centerInside"
+                android:src="@mipmap/star" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.0"
+                android:scaleType="centerInside"
+                android:src="@mipmap/star" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.0"
+                android:scaleType="centerInside"
+                android:src="@mipmap/star" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:scaleType="centerInside"
+                android:src="@mipmap/star" />
+
+        </LinearLayout>
+
+        <com.fingertec.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="恭喜你，当前任务已完成"
+            android:textColor="@color/toolbar_text_color"
+            android:textSize="@dimen/sp_16" />
+
+        <com.fingertec.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="请选择下面的操作"
+            android:textColor="@color/toolbar_text_color"
+            android:textSize="@dimen/sp_16" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey_divider" />
+
+    <LinearLayout style="@style/liner_padding_h">
+
+        <com.fingertec.widget.FontTextView
+            android:id="@+id/dialog_tv_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:padding="14dp"
+            android:text="确定"
+            android:textSize="@dimen/sp_16" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_divider" />
+
+        <com.fingertec.widget.FontTextView
+            android:id="@+id/dialog_tv_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:padding="14dp"
+            android:text="回到首页"
+            android:textSize="@dimen/sp_16" />
+
+    </LinearLayout>
+</LinearLayout>

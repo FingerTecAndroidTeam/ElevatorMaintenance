@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:paddingLeft="@dimen/toolbar_layout_padding"
+    android:paddingRight="@dimen/toolbar_layout_padding">
+
+    <ImageView
+        android:id="@+id/toolbar_iv_drawer"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerInside"
+        android:src="@mipmap/toolbar_left" />
+
+    <com.fingertec.widget.FontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="任务列表"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="20sp" />
+
+    <com.fingertec.widget.FontTextView
+        android:id="@+id/toolbar_tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/toolbar_right_count"
+        android:gravity="center"
+        android:lines="1"
+        android:maxWidth="60dp"
+        android:text="00"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

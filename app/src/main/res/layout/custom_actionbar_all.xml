@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_actionbar_rl"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/toolbar_layout_padding"
+    android:paddingRight="@dimen/toolbar_layout_padding">
+
+    <ImageView
+        android:id="@+id/custom_actionbar_return_img"
+        android:layout_width="@dimen/toolbar_left_img"
+        android:layout_height="@dimen/toolbar_left_img"
+        android:layout_centerVertical="true"
+        android:scaleType="centerInside" />
+
+    <com.fingertec.widget.FontTextView
+        android:id="@+id/custom_actionbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="@dimen/toolbar_text_size" />
+
+    <com.fingertec.widget.FontTextView
+        android:id="@+id/custom_actionbar_tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/toolbar_text_color" />
+
+</RelativeLayout>

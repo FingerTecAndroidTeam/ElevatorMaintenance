@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/step_bg"
+    android:orientation="vertical"
+    tools:context="com.fingertec.elevatormaintenance.SecondStepActivity">
+
+    <include layout="@layout/custom_actionbar_all" />
+
+    <ImageView
+        android:id="@+id/sstep_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/step_two" />
+
+    <com.fingertec.utils.ResizableImageView
+        android:id="@+id/sstep_iv_operation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sstep_btn_begin"
+        android:layout_below="@+id/sstep_image"
+        android:src="@mipmap/step_second_operation" />
+
+    <Button
+        android:id="@+id/sstep_btn_begin"
+        style="@style/white_def_button"
+        android:text="@string/next_step" />
+</RelativeLayout>

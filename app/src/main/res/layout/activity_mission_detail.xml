@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fingertec.elevatormaintenance.MissionDetailActivity">
+    <!--导航栏-->
+
+    <include
+
+        layout="@layout/custom_actionbar_all" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/custom_actionbar_rl"
+        android:background="@color/grey_divider" />
+
+    <ScrollView
+        android:id="@+id/mission_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/mission_btn_begin"
+        android:layout_below="@+id/divider"
+        android:background="@color/grey_nav"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout style="@style/liner_padding_10_h">
+
+                <TextView
+                    style="@style/mission_detail_left_text"
+                    android:text="任务编号" />
+
+                <TextView
+                    android:id="@+id/mission_tv_mission_no"
+                    style="@style/mission_detail_right_text"
+                    android:text="20161220A2a" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_divider" />
+
+            <LinearLayout style="@style/liner_padding_10_h">
+
+                <TextView
+                    style="@style/mission_detail_left_text"
+                    android:text="电梯编号" />
+
+                <TextView
+                    android:id="@+id/mission_tv_lift_no"
+                    style="@style/mission_detail_right_text"
+                    android:text="TJOA2a" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_divider" />
+
+            <LinearLayout style="@style/liner_padding_10_h">
+
+                <TextView
+                    style="@style/mission_detail_left_text"
+                    android:text="电梯所属物业" />
+
+                <TextView
+                    android:id="@+id/mission_tv_property"
+                    style="@style/mission_detail_right_text"
+                    android:text="新海岸物业管理" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_divider" />
+
+            <LinearLayout style="@style/liner_padding_10_h">
+
+                <TextView
+                    style="@style/mission_detail_left_text"
+                    android:text="电梯位置" />
+
+                <TextView
+                    android:id="@+id/mission_tv_position"
+                    style="@style/mission_detail_right_text"
+                    android:text="金月湾花园" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/light_blue">
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/liner_padding_10_h">
+
+                <TextView
+                    style="@style/mission_detail_left_text"
+                    android:text="规定维保日期" />
+
+                <TextView
+                    android:id="@+id/mission_tv_date"
+                    style="@style/mission_detail_right_text"
+                    android:text="2016-12-26" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_divider" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/mission_btn_begin"
+        style="@style/white_def_button"
+        android:text="@string/start_mission" />
+</RelativeLayout>
