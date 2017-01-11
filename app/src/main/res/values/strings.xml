@@ -17,5 +17,6 @@
     <string name="comment_list_empty">还没有评论哦，快来抢沙发吧~</string>
     <string name="net_no_tv">你的网络有问题哦</string>
     <string name="load_fail">加载失败</string>
+    <string name="zlc">zzllcc</string>
 
 </resources>
