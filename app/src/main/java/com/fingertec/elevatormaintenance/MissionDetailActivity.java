@@ -1,32 +1,58 @@
 package com.fingertec.elevatormaintenance;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amap.api.maps2d.AMap;
+import com.amap.api.maps2d.CameraUpdateFactory;
+import com.amap.api.maps2d.MapView;
+import com.amap.api.maps2d.model.BitmapDescriptorFactory;
+import com.amap.api.maps2d.model.LatLng;
+import com.amap.api.maps2d.model.Marker;
+import com.amap.api.maps2d.model.MarkerOptions;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.geocoder.GeocodeResult;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.amap.api.services.geocoder.RegeocodeAddress;
+import com.amap.api.services.geocoder.RegeocodeQuery;
+import com.amap.api.services.geocoder.RegeocodeResult;
+import com.amap.api.services.poisearch.PoiResult;
 import com.fingertec.bean.Bean;
 import com.fingertec.bean.MissionBean;
 import com.fingertec.common.Constants;
+import com.fingertec.common.EMApplication;
 import com.fingertec.httpclient.Action;
 import com.fingertec.httpclient.UrlConfig;
 import com.fingertec.httpclient.request.RequestContent;
 import com.fingertec.httpclient.request.Requester;
+import com.fingertec.utils.AMapUtil;
+import com.fingertec.utils.ToastUtil;
 import com.fingertec.utils.statusbar.StatusBarUtil;
 import com.fingertec.widget.LoadingBar;
 import com.fingertec.widget.TitleBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import butterknife.BindInt;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MissionDetailActivity extends BaseActivity implements View.OnClickListener {
-
 
     @BindView(R.id.mission_tv_mission_no)
     TextView tvMissionNo;
@@ -40,7 +66,10 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
     TextView tvDate;
     @BindView(R.id.mission_btn_begin)
     Button btnBegin;
+    @BindView(R.id.mission_detail_linear_location)
+    LinearLayout linearLocation;
     private String missionNum, elevatorNum, regulatoryName, location, maintenanceDate, maintenanceTimes, elevatorId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +77,8 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
         setContentView(R.layout.activity_mission_detail);
         initData();
     }
+
+
 
     private void initData() {
         missionNum = getIntent().getStringExtra(Constants.MISSION_NUMBER_KEY);//任务编号
@@ -62,7 +93,10 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
         tvProperty.setText(regulatoryName);
         tvPosition.setText(location);
         tvDate.setText(maintenanceDate);
+
     }
+
+
 
 
     @Override
@@ -74,7 +108,9 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
                         finish();
                     }
                 });
+        EMApplication.doFont(btnBegin);
         btnBegin.setOnClickListener(this);
+        linearLocation.setOnClickListener(this);
 
     }
 
@@ -82,7 +118,6 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
             case R.id.mission_btn_begin:
                 mHttpReq = new Requester(this);
                 requestContent = new RequestContent(UrlConfig.getTakeMissionUrl());
@@ -92,6 +127,11 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
                 hashMap.put(Constants.USER_ID_KEY, Constants.USER_ID_NAME);
                 mHttpReq.sendPostRequest(Action.TAKEMISSION, requestContent, Bean.class);
                 btnBegin.setEnabled(false);
+                break;
+            case R.id.mission_detail_linear_location:
+                Intent intent=new Intent(MissionDetailActivity.this,MapActivity.class);
+                intent.putExtra(Constants.LOCATION_KEY,location);
+                startActivity(intent);
                 break;
             default:
                 break;
@@ -122,4 +162,6 @@ public class MissionDetailActivity extends BaseActivity implements View.OnClickL
         btnBegin.setEnabled(true);
 
     }
+
+
 }

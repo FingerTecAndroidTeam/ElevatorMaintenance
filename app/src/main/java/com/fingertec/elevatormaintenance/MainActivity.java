@@ -128,12 +128,13 @@ public class MainActivity extends BaseActivity
             @Override
             public void SimpleOnItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(MainActivity.this, MissionDetailActivity.class);
-                intent.putExtra(Constants.MISSION_NUMBER_KEY, missionList.get(position).getElevatorID());//任务编号
+                intent.putExtra(Constants.MISSION_NUMBER_KEY, missionList.get(position).getMaintenanceTimes());//任务编号
                 intent.putExtra(Constants.ELEVATOR_NUMBER_KEY, missionList.get(position).getElevatorNum());//电梯编号
                 intent.putExtra(Constants.REGULATORY_NAME_KEY, missionList.get(position).getRegulatoryName());//物业名称
                 intent.putExtra(Constants.LOCATION_KEY, missionList.get(position).getElevatorLocation());//电梯位置
-                intent.putExtra(Constants.MAINTENANCE_TIMES_KEY, missionList.get(position).getDate());//维保次数-----------还没有名字
-                intent.putExtra(Constants.ELEVATOR_ID_KEY, missionList.get(position).getDate());//电梯Id
+                intent.putExtra(Constants.MAINTENANCE_TIMES_KEY, missionList.get(position).getMaintenanceTimes());//维保次数
+                intent.putExtra(Constants.ELEVATOR_ID_KEY, missionList.get(position).getElevatorID());//电梯Id
+                intent.putExtra(Constants.MAINTENANCE_DATE_KEY,missionList.get(position).getDate());//规定维保日期
                 startActivity(intent);
             }
         });
@@ -159,10 +160,12 @@ public class MainActivity extends BaseActivity
         switch (action) {
             case Action.NETWORK:
                 mLoadingBar.setStatus(LoadingBar.Status.NETWORK_ERR);
+                tvCount.setText("0");
                 Log.v("NETWORK ", "Error");
                 break;
             case Action.ERROR:
                 mLoadingBar.setStatus(LoadingBar.Status.FAIL);
+                tvCount.setText("0");
                 Log.v("Error ", "Error");
                 break;
             case Action.LOADMISSIONLIST:
@@ -175,7 +178,7 @@ public class MainActivity extends BaseActivity
                         mLoadingBar.setStatus(LoadingBar.Status.SUCCESS);
                         missionList.clear();
                         missionList.addAll(missionBean.data);
-                        tvCount.setText(missionBean.data.size());
+                        tvCount.setText(missionBean.data.size()+"");
                         missionAdapter.notifyDataSetChanged();
                     }
                 } else {

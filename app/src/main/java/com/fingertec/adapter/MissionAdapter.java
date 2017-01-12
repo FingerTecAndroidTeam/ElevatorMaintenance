@@ -22,7 +22,7 @@ public class MissionAdapter extends BaseQuickAdapter<MissionBean.MissionItem, Ba
     protected void convert(BaseViewHolder helper, MissionBean.MissionItem item) {
         helper.setText(R.id.main_tv_time, item.getDate())
                 .setText(R.id.main_tv_from, item.getRegulatoryName())
-                .setText(R.id.main_tv_work, item.getMaintenanceTimes());
+                .setText(R.id.main_tv_work, item.getElevatorLocation());
         // Glide.with(mContext).load(item.getUserAvatar()).crossFade().placeholder(R.mipmap.def_head).transform(new GlideCircleTransform(mContext)).into((ImageView) helper.getView(R.id.tweetAvatar));
 
     }

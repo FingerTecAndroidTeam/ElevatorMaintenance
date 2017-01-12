@@ -81,6 +81,7 @@ public class Requester implements IRequest {
 
                     @Override
                     public void onError(Throwable e) {
+
                         if (e instanceof ANError) {
                             ANError anError = (ANError) e;
                             if (anError.getErrorCode() != 0) {
@@ -91,7 +92,7 @@ public class Requester implements IRequest {
                             } else {
                                 // error.getErrorDetail() : connectionError连接错误, parseError解析错误, requestCancelledError请求取消错误
                                 Log.d(TAG, "onError errorDetail : " + anError.getErrorDetail());
-                                Bean bean = new Bean(Ret.FAIL, anError.getErrorDetail());
+                                Bean bean = new Bean(Ret.FAIL, "onError:" + anError.getErrorDetail());
                                 bean.errorcode = -99;
                                 mListener.OnComplete(Action.ERROR, bean);
                             }

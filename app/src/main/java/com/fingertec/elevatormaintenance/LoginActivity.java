@@ -49,7 +49,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     void initWidget() {
-        new TitleBuilder(this).setTitleText(getResources().getString(R.string.activity_login));
+        //new TitleBuilder(this).setTitleText(getResources().getString(R.string.activity_login));
         etUsername.setOnEditorActionListener((TextView.OnEditorActionListener) this);
         etPassword.setOnEditorActionListener((TextView.OnEditorActionListener) this);
         EMApplication.doFont(etUsername);
@@ -95,23 +95,24 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public <T> void OnComplete(int action, T bean) {
-        UserBean mBean = (UserBean) bean;
+
         btnLogin.setEnabled(true);
         switch (action) {
             case Action.NETWORK:
-                Toast.makeText(LoginActivity.this, mBean.msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, ((Bean)bean).msg, Toast.LENGTH_LONG).show();
                 Log.v("NETWORK ", "Error");
                 break;
             case Action.ERROR:
-                Toast.makeText(LoginActivity.this, mBean.msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, ((Bean)bean).msg, Toast.LENGTH_LONG).show();
                 Log.v("Error ", "Error");
                 break;
             case Action.LOGIN:
+                UserBean mBean = (UserBean) bean;
                 //解析数据
                 if (((UserBean) bean).ret == 1) {
                     UserInfomationUtils.setOpendId(mBean.retdata.getUser_id());//写入user_id
                     PrefUtils.WriteSharedPreferencesString("UserInformation", "name", mBean.retdata.getUser_name());
-                    PrefUtils.WriteSharedPreferencesString("UserInformation", "account", mBean.retdata.getUser_password());
+                    PrefUtils.WriteSharedPreferencesString("UserInformation", "account", mBean.retdata.getUser_account());
                     PrefUtils.WriteSharedPreferencesString("UserInformation", "pwd", mBean.retdata.getUser_password());
                     PrefUtils.WriteSharedPreferencesString("UserInformation", "phone", mBean.retdata.getUser_contact());
 
@@ -125,7 +126,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     this.finish();
                     //Toast.makeText(LoginActivity.this, mBean.msg, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, mBean.msg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, mBean.msg, Toast.LENGTH_LONG).show();
                 }
                 break;
         }

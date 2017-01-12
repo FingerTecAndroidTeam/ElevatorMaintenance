@@ -18,16 +18,16 @@ public class MissionBean extends Bean {
         private String regulatoryname;//物业公司名称
         private String elevatornum;//电梯设备编号
         private String elevatorid;//电梯id
-        private String maintenancetimes;//维保次数
-        private String elevatorLocation;//电梯位置
+        private String maintenancetimes;//任务编号
+        private String elevatorlocation;//电梯位置
         private boolean is_finished = false;//是否完成
 
         public String getElevatorLocation() {
-            return elevatorLocation;
+            return elevatorlocation;
         }
 
         public void setElevatorLocation(String elevatorLocation) {
-            this.elevatorLocation = elevatorLocation;
+            this.elevatorlocation = elevatorLocation;
         }
 
 

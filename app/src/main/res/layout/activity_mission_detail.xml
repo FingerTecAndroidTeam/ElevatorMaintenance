@@ -35,11 +35,11 @@
 
             <LinearLayout style="@style/liner_padding_10_h">
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     style="@style/mission_detail_left_text"
                     android:text="任务编号" />
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     android:id="@+id/mission_tv_mission_no"
                     style="@style/mission_detail_right_text"
                     android:text="20161220A2a" />
@@ -53,11 +53,11 @@
 
             <LinearLayout style="@style/liner_padding_10_h">
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     style="@style/mission_detail_left_text"
                     android:text="电梯编号" />
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     android:id="@+id/mission_tv_lift_no"
                     style="@style/mission_detail_right_text"
                     android:text="TJOA2a" />
@@ -71,11 +71,11 @@
 
             <LinearLayout style="@style/liner_padding_10_h">
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     style="@style/mission_detail_left_text"
                     android:text="电梯所属物业" />
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     android:id="@+id/mission_tv_property"
                     style="@style/mission_detail_right_text"
                     android:text="新海岸物业管理" />
@@ -87,33 +87,31 @@
                 android:layout_height="1dp"
                 android:background="@color/grey_divider" />
 
-            <LinearLayout style="@style/liner_padding_10_h">
+            <LinearLayout
+                android:id="@+id/mission_detail_linear_location"
+                style="@style/liner_padding_10_h">
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     style="@style/mission_detail_left_text"
                     android:text="电梯位置" />
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     android:id="@+id/mission_tv_position"
                     style="@style/mission_detail_right_text"
                     android:text="金月湾花园" />
 
             </LinearLayout>
-
-            <LinearLayout
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/light_blue">
-
-            </LinearLayout>
-
+                android:layout_height="1dp"
+                android:background="@color/grey_divider" />
             <LinearLayout style="@style/liner_padding_10_h">
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     style="@style/mission_detail_left_text"
                     android:text="规定维保日期" />
 
-                <TextView
+                <com.fingertec.widget.FontTextView
                     android:id="@+id/mission_tv_date"
                     style="@style/mission_detail_right_text"
                     android:text="2016-12-26" />

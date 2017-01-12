@@ -13,7 +13,7 @@ public class UserInfomationUtils {
 
     public static String getOpendId() {
         if (PrefUtils.ReadSharedPreferencesString(Constants.USER_ID_NAME, Constants.USER_ID_KEY) == null) {
-            return "null";
+            return null;
         }
         return PrefUtils.ReadSharedPreferencesString(Constants.USER_ID_NAME, Constants.USER_ID_KEY);
     }

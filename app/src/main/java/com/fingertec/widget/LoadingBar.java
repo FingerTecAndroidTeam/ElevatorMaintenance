@@ -27,7 +27,7 @@ public class LoadingBar extends RelativeLayout {
     public LoadingBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.loading_view, this, true);
-        jzTV=(FontTextView)findViewById(R.id.loading_text);
+        jzTV=(FontTextView)findViewById(R.id.loading_bar_text);
         loadingLayout = (LinearLayout) findViewById(R.id.loading);
         ivLoading = (ImageView) findViewById(R.id.loading_icon);
         reloadLayout = (LinearLayout) findViewById(R.id.reload);

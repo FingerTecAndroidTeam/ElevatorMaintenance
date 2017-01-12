@@ -29,6 +29,7 @@ public class LaunchActivity extends BaseActivity {
     }
 
     private void httpPost() {
+        //Log.d("id",UserInfomationUtils.getOpendId());
         if (TextUtils.isEmpty(UserInfomationUtils.getOpendId())) {
             ActivityToActivity.goLoginActivity(this);
             finish();
@@ -54,20 +55,18 @@ public class LaunchActivity extends BaseActivity {
 
     @Override
     public <T> void OnComplete(int action, T bean) {
-        UserBean mBean = (UserBean) bean;
+
         switch (action) {
             case Action.NETWORK:
-                // Toast.makeText(LaunchActivity.this, mBean.msg, Toast.LENGTH_SHORT).show();
                 ActivityToActivity.goLoginActivity(this);
                 Log.v("NETWORK ", "Error");
                 break;
             case Action.ERROR:
-                //Toast.makeText(LaunchActivity.this, mBean.msg, Toast.LENGTH_SHORT).show();
                 ActivityToActivity.goLoginActivity(this);
                 Log.v("Error ", "Error");
                 break;
             case Action.LOGIN:
-                //解析数据
+                UserBean mBean = (UserBean) bean;
                 if (((UserBean) bean).ret == 1) {
                     UserInfomationUtils.setOpendId(mBean.retdata.getUser_id());//写入user_id
                     PrefUtils.WriteSharedPreferencesString("UserInformation", "name", mBean.retdata.getUser_name());

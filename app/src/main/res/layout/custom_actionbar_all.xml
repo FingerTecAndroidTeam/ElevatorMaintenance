@@ -18,6 +18,7 @@
         android:id="@+id/custom_actionbar_title"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:gravity="center"
         android:layout_centerInParent="true"
         android:textColor="@color/toolbar_text_color"
         android:textSize="@dimen/toolbar_text_size" />

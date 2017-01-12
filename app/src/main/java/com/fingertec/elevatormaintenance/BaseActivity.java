@@ -53,8 +53,8 @@ public abstract class BaseActivity extends AppCompatActivity implements IHttpReq
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart(getClassName());//友盟统计 ，我没测试
-        MobclickAgent.onResume(mContext);
+      /*  MobclickAgent.onPageStart(getClassName());//友盟统计 ，我没测试
+        MobclickAgent.onResume(mContext);*/
 //        SexyCatInterface.init(this);
 //        if (!getClassName().equals("MainActivity")) {
 //            LogUtils.d(LogUtils.TAG, "onResume : " + getClassName());
@@ -96,8 +96,8 @@ public abstract class BaseActivity extends AppCompatActivity implements IHttpReq
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd(getClassName());
-        MobclickAgent.onPause(mContext);
+      /*  MobclickAgent.onPageEnd(getClassName());
+        MobclickAgent.onPause(mContext);*/
     }
 
     @Override
